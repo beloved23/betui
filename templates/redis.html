@@ -1,0 +1,17 @@
+<html>
+   <body>
+      <form action = "http://localhost:8000/login" method = "post">
+         {{ check }}
+         <p>Keys:</p>
+        <select name="keys">
+            {% for key in keys%}
+          <option name={{key}}> {{ key }}</option>
+        {% endfor %}
+        </select>
+         <p>Enter Name:</p>
+         <p><input type = "text" name = "redis" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+
+      </form>
+   </body>
+</html>

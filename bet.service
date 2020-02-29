@@ -1,0 +1,19 @@
+[Unit]
+Description=uWSGI instance to servr bet ui
+After=network.target
+
+
+[Service]
+#User=%I
+User=root
+Group=nobody
+
+#Environment=DISPLAY=:0
+#ExecStart=/usr/bin/xlock -mode mountain
+
+WorkingDirectory=/root/new/betui
+Environment="PATH=/root/Envs/pt3/bin"
+ExecStart=/root/Envs/pt3/bin/uwsgi --ini bet.ini
+
+[Install]
+WantedBy=multi-user.target
