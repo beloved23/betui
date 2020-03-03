@@ -41,6 +41,12 @@ def index():
    return render_template('index.html')
 
 
+@app.route('/test')
+def index():
+   logger.info("New Visit %s" % request.remote_addr)
+   return render_template('index2.html')
+
+
 def subscribe(**kwargs):
    payload = {"msisdn": kwargs['msisdn'], "service_id": conf.PLAN.get(kwargs['plan'])}
    out_put = jinja2.Template(conf.URL)
